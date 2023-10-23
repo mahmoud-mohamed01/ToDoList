@@ -1,2 +1,2 @@
 # ToDoList
-this is a todo List app using mongoDb and nodejs
+This is a ToDoList app using mongoDb and nodejs
