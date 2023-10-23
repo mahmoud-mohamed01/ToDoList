@@ -1,0 +1,33 @@
+<%- include("partials/header.ejs")  %>
+
+<div class="date-container">
+    <div><%const date_ = new Date();%>
+      <%  const options = {weekday: 'long', month: 'long', day: 'numeric',}; %>
+       <%   let date=date_.toLocaleString('en-IN', options);  %>
+       <%= date  %>
+    </div>
+</div>
+
+<div class="container">
+<div class="tasks-container">
+    <% if(locals.tasks){ %>
+    <% for(let i=0;i<tasks.length;i++){ %>
+    <div> 
+        <form action="/deleteItem" method="post">
+        <input class="chk" name="checkBox" value=<%= tasks[i].id %> type="checkbox" onChange="this.form.submit()">
+         <p><%= tasks[i].name %></p> 
+        </form>
+    </div>  
+    <hr width="100%" style="margin: 0; padding: 0;">
+        <% } %>
+        <% } %>
+     <div>
+    <form action="/today" method="post">
+        <input type="text" placeholder="new item" name="task">
+        <button class="add-btn" value="add" type="submit">+</button>
+    </form>
+    </div>
+</div>
+</div>
+
+<%- include("partials/footer.ejs")  %>
