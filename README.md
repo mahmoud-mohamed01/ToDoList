@@ -1,2 +1,3 @@
 # ToDoList
-This is a ToDoList app using mongoDb and nodejs
+ A ToDoList app built using mongoDb and nodejs.
+ The database is hosted on Mongo Atlas server.
